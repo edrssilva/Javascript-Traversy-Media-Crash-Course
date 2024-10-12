@@ -1,11 +1,11 @@
-// Variable definitions:
+// ---------------  VARIABLE DEFINITIONS   --------------- //
 // - var, global scoped
 // - let, block-level scoped, can be reasigned
 // - const block-level scoped, can't be reassigned and needs to be initialized
 
 // ALWAYS use const unless you know you will change the value of the variable
 
-// Primitive data types:
+// ---------------  PRIMITIVE DATA TYPES   --------------- //
 // String, Numbers, Booleans, null, undefined
 
 //String:
@@ -35,3 +35,12 @@ console.log(
   typeof y,
   typeof z
 );
+
+// ---------------  CONCATENATION   --------------- //
+const oldConcatenation =
+  "My name is " + fullName + " and I'm " + age + " years old."; // Old way
+
+//Template string: use back ticks -> ` `
+const modernConcatenation = `My name is ${fullName} and I'm ${age} years old.`; // ES6 way 😎
+
+console.log(modernConcatenation);
