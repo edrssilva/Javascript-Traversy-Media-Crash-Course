@@ -82,3 +82,40 @@ console.log(
   Splited into array by space: ${helloWorldArrayBySpace}
   `
 );
+
+// ---------------  ARRAYS   --------------- //
+// Arrays are variables that hold multiple values
+// We can change values inside a const array, add and remove indexes, but we can't reassign it
+
+const oldNumbersArray = new Array(1, 2, 3, 4, 5); // Not standard way, using the array constructor
+const newNumbersArray = [1, 2, 3, 4, 5]; // Standard way
+
+// We can use multiple data types inside an JS array
+const mixedTypesArray = [1, 2, "apple", "orange", true, false, null];
+
+// To access an single value of the array, use the index inside brackets
+const valueInsideMixedArray = newNumbersArray[3];
+
+// To change a single value, do the same thing
+mixedTypesArray[5] = true;
+
+// To add a new value without hard coding the index
+mixedTypesArray.push(undefined); // At the end, use the push method
+mixedTypesArray.unshift(0); // At the start, use the unshift method
+
+// To remove the last index, use the pop function
+mixedTypesArray.pop();
+
+// To check if something is an array use the Array class with the isArray method
+const notAnArray = "I'm not an array";
+const indeedAnArray = ["I'm", "an", "array"];
+
+const areThoseArrays = [
+  Array.isArray(notAnArray),
+  Array.isArray(indeedAnArray),
+];
+
+// To get an index of a certain value, use the indexOf method
+const mixedTypesArrayNullValueIndex = mixedTypesArray.indexOf(null);
+
+console.log(mixedTypesArray, areThoseArrays, mixedTypesArrayNullValueIndex);
