@@ -83,7 +83,7 @@ console.log(
   `
 );
 
-// ---------------  ARRAYS   --------------- //
+// ---------------  ARRAYS  --------------- //
 // Arrays are variables that hold multiple values
 // We can change values inside a const array, add and remove indexes, but we can't reassign it
 
@@ -119,3 +119,67 @@ const areThoseArrays = [
 const mixedTypesArrayNullValueIndex = mixedTypesArray.indexOf(null);
 
 console.log(mixedTypesArray, areThoseArrays, mixedTypesArrayNullValueIndex);
+
+// ---------------  OBJECT LITERALS  --------------- //
+// Object literals are key:value pairs, like an array, but instead of using int indexes, we can have meaningful names to the indexes
+
+// We can use objects inside of objects
+const myself = {
+  firstName: "Eduardo",
+  lastName: "Silva",
+  age: 18,
+  hobbies: ["Eletric Guitar", "Video games", "Chess"],
+  address: {
+    street: "Rua Paraná",
+    number: "400",
+    neighborhood: "Jardim Brasil",
+    city: "Adamantina",
+    state: "SP",
+    postalCode: "17805-052",
+  },
+};
+
+// To access a value, we use a dot ".", just like properties and brackets to get values inside of an array
+const myFirstName = myself.firstName;
+const myMainHobbie = myself.hobbies[1];
+const myCity = myself.address.city;
+
+// To deconstruct the values from the object to variables use the following syntax
+const {
+  firstName,
+  lastName,
+  address: { city },
+} = myself;
+
+// To add properties just assign them
+myself.email = "jeduardo.rss@gmail.com";
+
+console.log(myself);
+console.log(`
+    ${myFirstName}, ${myMainHobbie}, ${myCity}, 
+    
+    Desconstructed data: ${firstName} ${lastName} ${city}
+    Added property: ${myself.email}
+`);
+
+// ARRAYS OF OBJECTS
+const todos = [
+  {
+    id: 1,
+    title: "Take out trash",
+    description: "Throw the trash away",
+    isCompleted: true,
+  },
+  {
+    id: 2,
+    title: "Study Javascript",
+    description: "Continue the Traversy crash course",
+    isCompleted: false,
+  },
+];
+
+// Printing something out follows the same logic from above
+
+console.log(todos);
+
+console.log(todos[1].description);
