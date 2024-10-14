@@ -184,12 +184,14 @@ console.log(todos);
 
 console.log(todos[1].description);
 
+/*
+
 // ---------------  OBJECT LITERALS TO JSON  --------------- //
 // The main difference between object literals syntax and JSON syntas is that json has a double quote "" surrounding the key and string values
-/* Heres an example
+// Heres an example
 
   OBJECT LITERAL
-  const todos = [
+  const todosExample = [
     {
       id: 1,
       title: "Take out trash",
@@ -205,7 +207,7 @@ console.log(todos[1].description);
   ];
 
   JSON
-  const todosJSON = [
+  const todosJSONExample = [
     {
       "id":1,
       "title":"Take out trash",
@@ -219,7 +221,8 @@ console.log(todos[1].description);
       "isCompleted":false
     }
   ]
-*/
+
+
 // To do the conversion:
 const todosJSON = JSON.stringify(todos);
 console.log(todosJSON);
@@ -282,3 +285,94 @@ const todosFilterCompleteMap = todos
   .map(function (todo) {
     return todo.text;
   });
+
+*/
+
+// ---------------  CONDITIONALS  --------------- //
+// "=" means assigning a value | "==" checks if the value is equal independent of the type | "===" checks for value and the type
+const conditinalValue = 10;
+
+if (conditinalValue === 10) {
+  console.log("The conditional value is 10.");
+} else if (conditinalValue > 10) {
+  console.log("The conditional value is greater than 10.");
+} else {
+  console.log("The conditional value is less than 10.");
+}
+
+// The OR operator "||" check if at least one condition is true
+const orConditionValueA = 10;
+const orConditionValueB = 20;
+
+if (orConditionValueA > 10 || orConditionValueB > 10) {
+  console.log("At least one value is greater than 10");
+} else if (orConditionValueA === 10 || orConditionValueB === 10) {
+  console.log("At least one value is equal to 10");
+} else {
+  console.log("Both of the values are less than 10");
+}
+
+// The AND operator "&&" check if all of the conditions are true
+const andConditionValueA = 10;
+const andConditionValueB = 20;
+
+if (orConditionValueA > 10 && orConditionValueB > 10) {
+  console.log("Both of the values are greater than 10");
+} else if (orConditionValueA === 10 && orConditionValueB === 10) {
+  console.log("Both of the values are equal to 10");
+} else {
+  console.log("At least one value is different than 10");
+}
+
+// ---------------  TERNARY OPERATOR  --------------- //
+// The statement before the question mark is a condition, after the quesiton mark it goest like this:
+
+// const value = condition === true ? valueIfTrue : valueIfFalse;
+
+/* It's the same thing as:
+  let = value;  
+
+  if( condition === true) {
+    value = valueIfTrue;
+  } else {
+    value = valueIfFalse;
+  }
+*/
+
+const ternaryConditionValue = 10;
+
+const ternaryColor = ternaryConditionValue === 10 ? "Green" : "Red";
+
+console.log(`The ternary operator result color is: ${ternaryColor}`);
+
+// ---------------  SWITCHS  --------------- //
+// Switches replace the need of having a lot of ifs and else ifs by checking "case"s
+// The default case happens if none of the cases where true
+
+const switchIDValue = 1;
+let switchResultUser = "";
+
+switch (switchIDValue) {
+  case 1:
+    switchResultUser = "Eduardo";
+    break;
+  case 2:
+    switchResultUser = "Lucas";
+    break;
+  case 3:
+    switchResultUser = "Bruno";
+    break;
+  case 4:
+    switchResultUser = "Victor";
+    break;
+  case 5:
+    switchResultUser = "Nicolas";
+    break;
+  default:
+    console.log(`Invalid user ID: ${switchIDValue}`);
+    break;
+}
+
+if (!switchResultUser.length == 0) {
+  console.log(`Username: ${switchResultUser}`);
+}
