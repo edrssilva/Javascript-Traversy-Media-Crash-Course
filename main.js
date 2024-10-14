@@ -183,3 +183,102 @@ const todos = [
 console.log(todos);
 
 console.log(todos[1].description);
+
+// ---------------  OBJECT LITERALS TO JSON  --------------- //
+// The main difference between object literals syntax and JSON syntas is that json has a double quote "" surrounding the key and string values
+/* Heres an example
+
+  OBJECT LITERAL
+  const todos = [
+    {
+      id: 1,
+      title: "Take out trash",
+      description: "Throw the trash away",
+      isCompleted: true,
+    },
+    {
+      id: 2,
+      title: "Study Javascript",
+      description: "Continue the Traversy crash course",
+      isCompleted: false,
+    },
+  ];
+
+  JSON
+  const todosJSON = [
+    {
+      "id":1,
+      "title":"Take out trash",
+      "description":"Throw the trash away",
+      "isCompleted":true
+    },
+    {
+      "id":2,
+      "title":"Study Javascript",
+      "description":"Continue the Traversy crash course",
+      "isCompleted":false
+    }
+  ]
+*/
+// To do the conversion:
+const todosJSON = JSON.stringify(todos);
+console.log(todosJSON);
+
+// ---------------  FOR LOOPS  --------------- //
+// Uses the same logic as other languages that I know
+for (let i = 0; i < 10; i++) {
+  console.log(`For loop counter: ${i}`);
+}
+
+// ---------------  WHILE LOOPS  --------------- //
+// Uses the same logic as other languages that I know - set variable outside of the loop
+let whileIteration = 0;
+
+while (whileIteration < 10) {
+  console.log(`While loop counter ${whileIteration}`);
+  whileIteration++;
+}
+
+// ---------------  LOOP THROUGH ARRAYS --------------- //
+// Not the nicest way of doing it.
+for (let i = 0; i < todos.length; i++) {
+  console.log(todos[i]);
+}
+
+// More readable way of iterating an array
+for (let todo of todos) {
+  console.log(todo);
+}
+
+// RECOMMENDED WAYS OF ITERATING THROUGH AN ARRAY
+
+// ---------------  FOR EACH LOOPS  --------------- //
+// Loops for each item in array, the function can have multiple params, but the first parameter needs the variable to iterate "each"
+todos.forEach(function (todo) {
+  console.log(todo);
+});
+
+// ---------------  MAP  --------------- //
+// Create another array from an array
+const todosMap = todos.map(function (todo) {
+  return todo.text;
+});
+
+console.log(todosMap);
+
+// ---------------  FILTER  --------------- //
+// Create another array from an array based on a condition on return
+const todosFilterComplete = todos.filter(function (todo) {
+  return todo.isCompleted === true;
+});
+
+console.log(todosFilterComplete);
+
+// To map a filtered array, we can use multiple methods at the same line
+const todosFilterCompleteMap = todos
+  .filter(function (todo) {
+    return todo.isCompleted === true;
+  })
+  .map(function (todo) {
+    return todo.text;
+  });
