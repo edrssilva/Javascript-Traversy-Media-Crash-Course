@@ -376,3 +376,32 @@ switch (switchIDValue) {
 if (!switchResultUser.length == 0) {
   console.log(`Username: ${switchResultUser}`);
 }
+
+// ---------------  FUNCTIONS  --------------- //
+// Declare the function, with or withour parameters, if you assign the values on the parameters, it's gonna act like an default value, and those can be overwriten
+function AddNumbers(num1 = 0, num2 = 0) {
+  return num1 + num2;
+}
+
+// Call the function
+console.log(`Sum of the numbers: ${AddNumbers(1, 3)}`);
+
+// ARROW FUNCTIONS
+const addNumbersArrow = (num1 = 0, num2 = 0) => {
+  return num1 + num2;
+};
+
+console.log(
+  `Sum of the numbers on the arrow function: ${addNumbersArrow(1, 3)}`
+);
+
+// If the arrow function has only one statement, the function can be writen as follows:
+const addNumbersArrowStatementReduced = (num1 = 0, num2 = 0) =>
+  console.log(num1 + num2);
+
+// And if it only returns something AND is only a single statement:
+const addNumbersArrowReturnReduced = (num1 = 0, num2 = 0) => num1 + num2;
+
+// Not finished yet, if it has only a single parameter, can be writen in the following way:
+// And if it only returns something AND is only a single statement, ignore the params parenthesis, it's my VS CODE extension putting it in, works without them:
+const addNumbersArrowParameterReduced = (num1) => num1 + 10;
