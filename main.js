@@ -405,3 +405,63 @@ const addNumbersArrowReturnReduced = (num1 = 0, num2 = 0) => num1 + num2;
 // Not finished yet, if it has only a single parameter, can be writen in the following way:
 // And if it only returns something AND is only a single statement, ignore the params parenthesis, it's my VS CODE extension putting it in, works without them:
 const addNumbersArrowParameterReduced = (num1) => num1 + 10;
+
+// ---------------  OBJECT ORIENTED PROGRAMMING  --------------- //
+
+/*
+// ---------------  ES5  --------------- //
+
+// Constructor function
+function Person(firstName, lastName, dateOfBirth) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dateOfBirth = new Date(dateOfBirth); // Mes-Dia-Ano Hora-Minuto-Segundo
+
+  // Method inside an object
+  // this.getFullName = function () {
+  //   return `${this.firstName} ${this.lastName}`;
+  // };
+}
+
+// Method outside and object, at it's prototype
+Person.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+// Instantiate object
+const person1 = new Person("Eduardo", "Silva", "07-19-2006");
+const person2 = new Person("Letícia", "Olivi", "12-26-2006");
+const person3 = new Person("Lucas", "Mignossi", "09-22-2006");
+
+*/
+
+// ---------------  ES6  --------------- //
+
+class Person {
+  constructor(firstName, lastName, dateOfBirth) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dateOfBirth = new Date(dateOfBirth);
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+// Instantiate object
+const person1 = new Person("Eduardo", "Silva", "07-19-2006");
+const person2 = new Person("Letícia", "Olivi", "12-26-2006");
+const person3 = new Person("Lucas", "Mignossi", "09-22-2006");
+
+const mediumYearOfBirth =
+  (person1.dateOfBirth.getFullYear() +
+    person1.dateOfBirth.getFullYear() +
+    person1.dateOfBirth.getFullYear()) /
+  3;
+
+console.log(person1);
+console.log(person2);
+console.log(person3);
+console.log(`Medium year of birth: ${mediumYearOfBirth}`);
+console.log(`Person1's full name: ${person1.getFullName()}`);
