@@ -25,6 +25,7 @@
     </header>
     <main class="flex flex-col items-center gap-8 my-16">
       <form
+        id="user-form"
         action=""
         class="w-[320px] md:w-[480px] flex flex-col gap-4 bg-white shadow-md px-8 py-8 rounded-lg font-semibold text-slate-700"
       >
@@ -48,6 +49,10 @@
             placeholder="Insert the user email"
             class="px-2 py-1 border-2 border-slate-600 rounded placeholder:text-slate-500 mb-2"
           />
+          <div
+            id="message"
+            class="text-red-500 hidden mt-1 transition-all"
+          ></div>
         </div>
         <div>
           <input
